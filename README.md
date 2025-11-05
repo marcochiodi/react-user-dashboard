@@ -1,5 +1,65 @@
 # Mini User Dashboard — React + TypeScript
 
+## 🇬🇧 English Version
+
+### 📦 Project Overview
+This project was developed as a technical assessment.  
+The goal was to create a mini user dashboard in React with:
+
+- responsive UI
+- infinite scrolling
+- user detail modal
+- filtering by name & role
+- global loading indicator
+- dark/light mode
+
+---
+
+### 🛠️ Tech Stack
+
+- React + TypeScript
+- Zustand
+- Axios
+- Bootstrap 5 + Bootstrap Icons
+- DummyJSON API
+
+---
+
+### 🎯 Technical Decisions
+
+- Zustand chosen over Redux → simpler, no boilerplate, fast
+- Infinite scroll triggered on page bottom → simple & effective
+- Pure Bootstrap instead of react-bootstrap → full control, cleaner CSS
+- Theme via `data-bs-theme` → automatic Bootstrap dark/light adaptation
+- Axios interceptors → global loading state
+- DummyJSON → realistic mock user dataset
+
+---
+
+### ✅ Features
+
+- User list & modal detail
+- Role & text filters
+- Infinite scroll
+- Theme toggle
+- Loading overlay
+- Responsive layout
+
+---
+
+### 📝 Conclusion
+
+The focus was on:
+
+- clean architecture
+- good developer experience
+- real-world front-end patterns
+- maintainable and scalable structure
+
+Future improvements: Testing, React Query, Error boundary system.
+
+## 🇬🇧 Italian Version
+
 ## 📦 Panoramica del progetto
 
 Questo progetto è stato sviluppato come test tecnico.  
@@ -146,62 +206,3 @@ Gestione errori API | Alert/Toast personalizzati |
 
 ---
 
-## 🇬🇧 English Version
-
-### 📦 Project Overview
-This project was developed as a technical assessment.  
-The goal was to create a mini user dashboard in React with:
-
-- responsive UI
-- infinite scrolling
-- user detail modal
-- filtering by name & role
-- global loading indicator
-- dark/light mode
-
----
-
-### 🛠️ Tech Stack
-
-- React + TypeScript
-- Zustand
-- Axios
-- Bootstrap 5 + Bootstrap Icons
-- DummyJSON API
-
----
-
-### 🎯 Technical Decisions
-
-- Zustand chosen over Redux → simpler, no boilerplate, fast
-- Infinite scroll triggered on page bottom → simple & effective
-- Pure Bootstrap instead of react-bootstrap → full control, cleaner CSS
-- Theme via `data-bs-theme` → automatic Bootstrap dark/light adaptation
-- Axios interceptors → global loading state
-- DummyJSON → realistic mock user dataset
-
----
-
-### ✅ Features
-
-- User list & modal detail
-- Role & text filters
-- Infinite scroll
-- Theme toggle
-- Loading overlay
-- Responsive layout
-
----
-
-### 📝 Conclusion
-
-The focus was on:
-
-- clean architecture
-- good developer experience
-- real-world front-end patterns
-- maintainable and scalable structure
-
-Future improvements: Testing, React Query, Error boundary system.
-
----
