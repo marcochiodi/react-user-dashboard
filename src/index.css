@@ -11,3 +11,20 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+
+.bg-purple {
+  background-color: #8334c2 !important;
+}
+
+.btn-theme {
+  position: fixed;
+  top: 50%;
+  left: 0;
+  opacity: 0.5;
+  transition: opacity .5s ease;
+}
+
+.btn-theme:hover {
+  opacity: 1 !important;
+}
