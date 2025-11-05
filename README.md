@@ -1,46 +1,207 @@
-# Getting Started with Create React App
+# Mini User Dashboard — React + TypeScript
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## 📦 Panoramica del progetto
 
-## Available Scripts
+Questo progetto è stato sviluppato come test tecnico.  
+L'obiettivo era realizzare una mini dashboard in **React** per visualizzare, filtrare e gestire una lista utenti con:
 
-In the project directory, you can run:
+- ✅ design moderno e responsive
+- ✅ dark/light mode
+- ✅ infinite scrolling
+- ✅ filtro utenti per nome e ruolo
+- ✅ dettaglio utente in modal
+- ✅ indicatori di caricamento globali
 
-### `npm start`
+Il risultato è un'applicazione semplice, pulita ed estensibile, progettata secondo buone pratiche.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+---
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## 🛠️ Stack Tecnologico
 
-### `npm test`
+| Tecnologia | Motivazione |
+|-----------|-------------|
+| **React + TypeScript** | Tipizzazione forte, leggibilità e qualità del codice |
+| **Zustand** | State management leggero, intuitivo, zero boilerplate |
+| **Axios** | Gestione HTTP semplificata + interceptors per loading globale |
+| **Bootstrap 5** | Rapid UI, responsive design, classi utili |
+| **Bootstrap Icons** | Set icone semplice e coerente con Bootstrap |
+| **DummyJSON API** | Mock API veloce per utenti realistici |
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+---
 
-### `npm run build`
+## 🎯 Scelte Tecniche e Motivazioni
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### ✅ Zustand per gestione stato
+Scelto al posto di Redux per:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- codice molto più semplice
+- API intuitiva
+- no boilerplate
+- aggiornamenti dello stato chiari e leggibili
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+> Approccio vicino al pattern BehaviorSubject usato in Angular, quindi familiare ed efficiente.
 
-### `npm run eject`
+---
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+### ✅ Infinite scroll basato sullo scroll della pagina
+Implementato in modo semplice:
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- quando l'utente raggiunge la fine della pagina → incremento `limit`
+- rieseguo la fetch con un nuovo limite
+- nessuna complessità aggiuntiva
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+Perfetto per una demo: chiaro, lineare, facilmente estensibile.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+---
 
-## Learn More
+### ✅ Bootstrap "puro"
+Nessun uso di `react-bootstrap`.  
+Motivi:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- pieno controllo del markup e del CSS
+- meno dipendenze
+- stilizzazione chiara e più vicina a progetti reali enterprise
+- codice più leggero
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+---
+
+### ✅ Dark/Light theme tramite `data-bs-theme`
+Tema globale impostato su `<html>`:
+
+```ts
+document.documentElement.setAttribute(
+  "data-bs-theme",
+  theme ? "dark" : "light"
+);
+```
+
+Vantaggi:
+
+- bootstrap cambia tema automaticamente
+- niente if dentro i componenti
+- soluzione scalabile e pulita
+
+---
+
+### ✅ DummyJSON per mock dati utenti
+Scelta per:
+
+- accesso immediato a dati realistici
+- supporto `limit` per simulare infinite scroll
+- ritorno di molti campi utili per dettaglio utente
+
+Ho estratto l'interfaccia `User` dai dati JSON e l'ho mantenuta nel folder `models/`.
+
+---
+
+## 🚀 Funzionalità implementate
+
+| Funzione | Dettaglio |
+|--------|---------|
+Lista utenti | ✅
+Filtro per nome | ✅
+Filtro per ruolo | ✅
+Dettaglio utente in modal | ✅
+Modal responsive | ✅
+Dark/Light mode toggle | ✅
+Infinite scrolling | ✅
+Spinner globale | ✅ (via Axios interceptors)
+UI responsive | ✅
+
+---
+
+## 📁 Struttura progetto (semplificata)
+
+```
+src/
+ ├─ assets/
+ ├─ components/
+ ├─ store/
+ ├─ models/
+ ├─ api/
+ ├─ styles/
+ └─ App.tsx
+```
+
+---
+
+## 🧪 Test
+I test unitari possono essere aggiunti tramite:
+
+- React Testing Library
+- Jest
+
+> Sviluppo previsto come step successivo
+
+---
+
+## 🚧 Possibili evoluzioni
+
+| Miglioria | Motivazione |
+|-----------|-------------|
+React Query | Cache, stato server avanzato |
+Test E2E (Cypress) | Validazione flussi reali |
+Persistenza tema utente | UX migliorata |
+Gestione errori API | Alert/Toast personalizzati |
+
+---
+
+## 🇬🇧 English Version
+
+### 📦 Project Overview
+This project was developed as a technical assessment.  
+The goal was to create a mini user dashboard in React with:
+
+- responsive UI
+- infinite scrolling
+- user detail modal
+- filtering by name & role
+- global loading indicator
+- dark/light mode
+
+---
+
+### 🛠️ Tech Stack
+
+- React + TypeScript
+- Zustand
+- Axios
+- Bootstrap 5 + Bootstrap Icons
+- DummyJSON API
+
+---
+
+### 🎯 Technical Decisions
+
+- Zustand chosen over Redux → simpler, no boilerplate, fast
+- Infinite scroll triggered on page bottom → simple & effective
+- Pure Bootstrap instead of react-bootstrap → full control, cleaner CSS
+- Theme via `data-bs-theme` → automatic Bootstrap dark/light adaptation
+- Axios interceptors → global loading state
+- DummyJSON → realistic mock user dataset
+
+---
+
+### ✅ Features
+
+- User list & modal detail
+- Role & text filters
+- Infinite scroll
+- Theme toggle
+- Loading overlay
+- Responsive layout
+
+---
+
+### 📝 Conclusion
+
+The focus was on:
+
+- clean architecture
+- good developer experience
+- real-world front-end patterns
+- maintainable and scalable structure
+
+Future improvements: Testing, React Query, Error boundary system.
+
+---

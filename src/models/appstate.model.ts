@@ -2,7 +2,6 @@ import { User } from "./users.model";
 
 export interface UsersState {
     isLoading: boolean;
-
     users: User[];
     filteredUsers: User[];
     roles: string[];
