@@ -1,6 +1,6 @@
 # Mini User Dashboard — React + TypeScript
 
-## 🇬🇧 English Version
+## English Version
 
 ### 📦 Project Overview
 This project was developed as a technical assessment.  
@@ -58,7 +58,7 @@ The focus was on:
 
 Future improvements: Testing, React Query, Error boundary system.
 
-## 🇬🇧 Italian Version
+## Italian Version
 
 ## 📦 Panoramica del progetto
 
