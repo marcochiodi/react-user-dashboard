@@ -84,7 +84,7 @@ export default function UserDetail({ user, onClose, className }: Props) {
                 </div>
 
                 <div className="col-12 col-lg-6">
-                  <h6 className="text-uppercase text-muted mb-2">Profilo</h6>
+                  <h6 className="text-uppercase text-muted mb-2">Profile</h6>
                   <ul className="list-group list-group-flush">
                     <li className="list-group-item px-0">
                       <strong>Genre:</strong> {user.gender}
@@ -103,7 +103,7 @@ export default function UserDetail({ user, onClose, className }: Props) {
                 </div>
 
                 <div className="col-12 col-lg-6">
-                  <h6 className="text-uppercase text-muted mb-2">Lavoro</h6>
+                  <h6 className="text-uppercase text-muted mb-2">Job</h6>
                   <ul className="list-group list-group-flush">
                     <li className="list-group-item px-0">
                       <strong>Company:</strong> {user.company?.name}
