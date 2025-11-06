@@ -11,11 +11,11 @@ return (
     >
       {!store.darktheme ? (
         <>
-          <i className="bi bi-moon-fill"></i> Dark Theme
+          <i className="bi bi-moon-fill" aria-label="Dark theme"></i> Dark Theme
         </>
       ) : (
         <>
-          <i className="bi bi-brightness-high-fill"></i> Light Theme
+          <i className="bi bi-brightness-high-fill" aria-label="Light theme"></i> Light Theme
         </>
       )}
     </button>

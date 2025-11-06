@@ -89,7 +89,7 @@ export default function UserModal({ user, onClose }: Props) {
 
           <div className="modal-footer">
             <button className="btn btn-secondary" onClick={onClose}>
-              Chiudi
+              Close
             </button>
           </div>
         </div>

@@ -7,8 +7,9 @@ function Search() {
     const setFilters = useUsers(s => s.setFilters)
     return (
         <input
+            aria-label="Search a user"
             className="form-control"
-            placeholder="Cerca per nome…"
+            placeholder="Search a user..."
             value={searchString}
             onChange={(e) => setFilters({ searchString: e.target.value })}
         />)

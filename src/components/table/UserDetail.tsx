@@ -38,14 +38,13 @@ export default function UserDetail({ user, onClose, className }: Props) {
           </h5>
           {onClose && (
             <button className="btn btn-sm btn-outline-secondary" onClick={onClose}>
-              Chiudi
+              Close
             </button>
           )}
         </div>
 
         <div className="card-body">
           <div className="row g-4 align-items-start">
-            {/* Avatar + badge ruolo */}
             <div className="col-12 col-md-4 text-center">
               <img
                 src={user.image}
@@ -70,13 +69,13 @@ export default function UserDetail({ user, onClose, className }: Props) {
             <div className="col-12 col-md-8">
               <div className="row g-3">
                 <div className="col-12">
-                  <h6 className="text-uppercase text-muted mb-2">Contatti</h6>
+                  <h6 className="text-uppercase text-muted mb-2">Contacts</h6>
                   <ul className="list-group list-group-flush">
                     <li className="list-group-item px-0">
                       <strong>Email:</strong> <a href={`mailto:${user.email}`}>{user.email}</a>
                     </li>
                     <li className="list-group-item px-0">
-                      <strong>Telefono:</strong> <a href={`tel:${user.phone}`}>{user.phone}</a>
+                      <strong>Phone:</strong> <a href={`tel:${user.phone}`}>{user.phone}</a>
                     </li>
                     <li className="list-group-item px-0">
                       <strong>Username:</strong> {user.username}
@@ -88,16 +87,16 @@ export default function UserDetail({ user, onClose, className }: Props) {
                   <h6 className="text-uppercase text-muted mb-2">Profilo</h6>
                   <ul className="list-group list-group-flush">
                     <li className="list-group-item px-0">
-                      <strong>Genere:</strong> {user.gender}
+                      <strong>Genre:</strong> {user.gender}
                     </li>
                     <li className="list-group-item px-0">
                       <strong>Età:</strong> {user.age}
                     </li>
                     <li className="list-group-item px-0">
-                      <strong>Altezza/Peso:</strong> {user.height} cm / {user.weight} kg
+                      <strong>Height/Weight:</strong> {user.height} cm / {user.weight} kg
                     </li>
                     <li className="list-group-item px-0">
-                      <strong>Occhi/Capelli:</strong> {user.eyeColor} / {user.hair?.color}{' '}
+                      <strong>Eye/Hair:</strong> {user.eyeColor} / {user.hair?.color}{' '}
                       {user.hair?.type && `(${user.hair.type})`}
                     </li>
                   </ul>
@@ -107,19 +106,19 @@ export default function UserDetail({ user, onClose, className }: Props) {
                   <h6 className="text-uppercase text-muted mb-2">Lavoro</h6>
                   <ul className="list-group list-group-flush">
                     <li className="list-group-item px-0">
-                      <strong>Azienda:</strong> {user.company?.name}
+                      <strong>Company:</strong> {user.company?.name}
                     </li>
                     <li className="list-group-item px-0">
-                      <strong>Reparto:</strong> {user.company?.department}
+                      <strong>Department:</strong> {user.company?.department}
                     </li>
                     <li className="list-group-item px-0">
-                      <strong>Titolo:</strong> {user.company?.title}
+                      <strong>Title:</strong> {user.company?.title}
                     </li>
                   </ul>
                 </div>
 
                 <div className="col-12">
-                  <h6 className="text-uppercase text-muted mb-2">Indirizzo</h6>
+                  <h6 className="text-uppercase text-muted mb-2">Address</h6>
                   <div className="border rounded p-3">
                     <div>
                       {user.address?.address}, {user.address?.city} ({user.address?.stateCode}) —{' '}
@@ -143,7 +142,7 @@ export default function UserDetail({ user, onClose, className }: Props) {
                   <div className="row g-3">
                     <div className="col-12 col-md-6">
                       <div className="border rounded p-3 h-100">
-                        <strong>Università:</strong> {short(user.university)}
+                        <strong>University:</strong> {short(user.university)}
                         <br />
                         <strong>IP:</strong> {user.ip}
                         <br />
@@ -154,12 +153,12 @@ export default function UserDetail({ user, onClose, className }: Props) {
                     </div>
                     <div className="col-12 col-md-6">
                       <div className="border rounded p-3 h-100">
-                        <strong>Carta:</strong>{' '}
+                        <strong>Card:</strong>{' '}
                         {user.bank?.cardType} •••• {last4(user.bank?.cardNumber)}
                         <br />
-                        <strong>Scadenza:</strong> {user.bank?.cardExpire}
+                        <strong>Expiration:</strong> {user.bank?.cardExpire}
                         <br />
-                        <strong>Valuta:</strong> {user.bank?.currency}
+                        <strong>Currency:</strong> {user.bank?.currency}
                         <br />
                         <strong>Crypto:</strong> {user.crypto?.coin} ·{' '}
                         <small className="text-muted">{short(user.crypto?.network)}</small>

@@ -12,6 +12,7 @@ export default function RoleFilter() {
 
   return (
     <select
+      aria-label="Role selection"
       name="role"
       id="role"
       className="form-select"
