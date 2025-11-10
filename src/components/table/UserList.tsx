@@ -3,6 +3,7 @@ import { useUsers } from "../../store/users.store";
 import Search from "./SearchFilter";
 import Role from "./RoleFilter";
 import { User } from "../../models/users.model";
+import UserTable from "../shared/UserTable";
 
 function Table() {
     const isLoading = useUsers((state) => state.isLoading);
@@ -17,7 +18,7 @@ function Table() {
 
 
 
-    const setSeletectedUser = (user: User) => {
+    const setSelectedUser = (user: User) => {
         selectUser(user)
     }
 
@@ -59,29 +60,7 @@ function Table() {
                 <div className="col-12 col-sm-4"><Role></Role></div>
             </div>
             <div className="w-100 overflow-x-auto">
-                <table className="table table-striped table-responsive text-start">
-                    <thead>
-                        <tr>
-                            <th>Name</th>
-                            <th>Email</th>
-                            <th>Role</th>
-                            <th>Detail</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {users.map(user => (
-                            <tr key={user.email}>
-
-                                <td>{user.firstName} {user.lastName}</td>
-                                <td>{user.email}</td>
-                                <td>{user.role}</td>
-                                <td><button className="btn btn-primary bg-purple text-white" title="detail" onClick={() => setSeletectedUser(user)}>
-                                    <i className="bi bi-card-heading"></i></button>
-                                </td>
-                            </tr>
-                        ))}
-                    </tbody>
-                </table>
+                <UserTable users={users} setSelectedUser={setSelectedUser} />
             </div>
 
         </>
