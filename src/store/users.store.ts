@@ -3,7 +3,7 @@ import { create } from 'zustand'
 import axios from 'axios'
 import { User } from '../models/users.model'
 import { Filters, UsersState } from '../models/appstate.model'
-
+import { devtools } from 'zustand/middleware'
 
 
 function applyFilters(users: User[], filters: Filters): User[] {
@@ -23,7 +23,7 @@ const extractRoles = (users: User[]) =>
     Array.from(new Set(users.map(u => u.role).filter(Boolean))) as string[];
 const initialFilters: Filters = { role: '', searchString: '' }
 
-export const useUsers = create<UsersState>((set, get) => ({
+export const useUsers = create<UsersState>()(devtools((set, get) => ({
     isLoading: false,
     setLoading: (v) => set({ isLoading: v }),
     users: [],
@@ -33,14 +33,14 @@ export const useUsers = create<UsersState>((set, get) => ({
     darktheme: false,
     filters: initialFilters,
 
-    bumpLimitAndRefetch(step = 20) {
+    bumpLimitAndRefetch(step = 5) {
         const { isLoading, users, total, limit } = get();
         if (isLoading) return;
         if (users.length >= total && total > 0) return; // niente altro da caricare
         set({ limit: limit + step });
         void get().fetchUsers();
     },
-    limit: 20,
+    limit: 5,
     total: 0,
 
     async fetchUsers() {
@@ -81,4 +81,4 @@ export const useUsers = create<UsersState>((set, get) => ({
     setTheme: (theme: boolean) => {
         set({ darktheme: theme });
     }
-}))
+})))
